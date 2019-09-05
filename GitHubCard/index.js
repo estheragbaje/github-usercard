@@ -95,9 +95,9 @@ function usercardMaker(data) {
   name.textContent = data.name;
   username.textContent = data.login;
   location.textContent = data.location;
-  profile.textContent = "Profile";
-  profileLink.setAttribute("href", data.url);
-  profileLink.textContent = data.url;
+  profile.textContent = "Profile: ";
+  profileLink.setAttribute("href", data.html_url);
+  profileLink.textContent = data.html_url;
   followers.textContent = data.followers;
   following.textContent = data.following;
   bio.textContent = data.bio;
