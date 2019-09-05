@@ -30,7 +30,8 @@ const followersArray = [
   "justsml",
   "luishrd",
   "bigknell",
-  "ladrillo"
+  "ladrillo",
+  "estheragbaje"
 ];
 
 /* Step 3: Create a function that accepts a single object as its only argument,
