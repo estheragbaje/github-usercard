@@ -24,7 +24,14 @@
           user, and adding that card to the DOM.
 */
 
-const followersArray = [];
+const followersArray = [
+  "tetondan",
+  "dustinmyers",
+  "justsml",
+  "luishrd",
+  "bigknell",
+  "ladrillo"
+];
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
@@ -113,16 +120,21 @@ function usercardMaker(data) {
   return divCard;
 }
 
-axios
-  .get("https://api.github.com/users/estheragbaje")
-  .then(response => {
-    console.log(response.data);
-    const user = usercardMaker(response.data);
+//Selector for the cards class
+const cards = document.querySelector(".cards");
 
-    const cards = document.querySelector(".cards");
-    cards.appendChild(user);
-  })
+//using for each on the followers array
+followersArray.forEach(follower => {
+  axios
+    .get(`https://api.github.com/users/${follower}`)
+    .then(response => {
+      console.log(response.data);
+      const user = usercardMaker(response.data);
+      cards.appendChild(user);
+    })
 
-  .catch(error => {
-    // document.body.textContent = "error";
-  });
+    .catch(error => {
+      // document.body.textContent = "error";
+    });
+});
+//    .get(`https://api.github.com/users/${follower}`)
